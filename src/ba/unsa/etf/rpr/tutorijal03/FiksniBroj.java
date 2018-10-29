@@ -22,7 +22,9 @@ public class FiksniBroj extends TelefonskiBroj {
         }
     }
 
-    public String getBroj() { return this.broj; }
+    public String getBroj() {
+        return this.broj;
+    }
 
     @Override
     public String ispisi() {
@@ -31,6 +33,6 @@ public class FiksniBroj extends TelefonskiBroj {
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.broj);
+        return Objects.hash(this.getBroj());
     }
 }

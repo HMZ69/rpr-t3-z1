@@ -1,5 +1,7 @@
 package ba.unsa.etf.rpr.tutorijal03;
 
+import java.util.Objects;
+
 public class MobilniBroj extends TelefonskiBroj {
 
     MobilniBroj(int mobilnaMreza, String broj) {
@@ -24,6 +26,6 @@ public class MobilniBroj extends TelefonskiBroj {
 
     @Override
     public int hashCode() {
-        return 0;
+        return Objects.hash(this.getBroj());
     }
 }

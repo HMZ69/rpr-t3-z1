@@ -48,8 +48,10 @@ public class Imenik {
     Set<String> izGrada(FiksniBroj.Grad g) {
         Set<String> s = new TreeSet<>();
         for (Map.Entry<TelefonskiBroj, String> entry : this.getImenik().entrySet()) {
-            if (entry.getKey().equals(new FiksniBroj(g, entry.getKey().toString())))
+            TelefonskiBroj br = new FiksniBroj(g, entry.getKey().toString().replace("033/", ""));
+            if (entry.getKey().toString().equals(br.toString())) {
                 s.add(entry.getValue());
+            }
         }
         return s;
     }
@@ -57,7 +59,8 @@ public class Imenik {
     Set<TelefonskiBroj> izGradaBrojevi(FiksniBroj.Grad g) {
         Set<TelefonskiBroj> s = new TreeSet<>();
         for (Map.Entry<TelefonskiBroj, String> entry : this.getImenik().entrySet()) {
-            if (entry.getKey().equals(new FiksniBroj(g, entry.getKey().toString())))
+            TelefonskiBroj br = new FiksniBroj(g, entry.getKey().toString().replace("033/", ""));
+            if (entry.getKey().toString().equals(br.toString()))
                 s.add(entry.getKey());
         }
         return s;

@@ -21,4 +21,9 @@ public class MedunarodniBroj extends TelefonskiBroj {
     public int hashCode() {
         return Objects.hash(this.getBroj());
     }
+
+    @Override
+    public String toString() {
+        return this.getBroj();
+    }
 }
